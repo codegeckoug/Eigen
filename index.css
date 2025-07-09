@@ -1,0 +1,134 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #0f0f1a;
+  color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #0e0e28, #1b1b38);
+  text-align: center;
+  position: relative;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+  animation: fadeIn 2s ease-in-out;
+}
+
+button#exploreBtn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: background 0.3s;
+}
+
+button#exploreBtn:hover {
+  background: #0192a3;
+}
+
+.main-content {
+  padding: 4rem 2rem;
+  display: none;
+  background-color: #151529;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.grid-item {
+  background: #202042;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #00bcd4aa;
+  transition: transform 0.3s, background 0.3s;
+  position: relative;
+  cursor: help;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+  background: #2a2a58;
+}
+
+.layer-title {
+  grid-column: span 4;
+  font-weight: bold;
+  font-size: 1.4rem;
+  background: #292955;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Tooltip effect */
+.grid-item[title] {
+  position: relative;
+}
+
+.grid-item[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222240;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  width: 90%;
+  max-width: 250px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+  white-space: normal;
+  pointer-events: none;
+}
