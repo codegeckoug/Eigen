@@ -20,6 +20,7 @@ body {
   background: linear-gradient(120deg, #0e0e28, #1b1b38);
   text-align: center;
   position: relative;
+  padding: 1rem;
 }
 
 .intro h1 {
@@ -73,6 +74,7 @@ button#exploreBtn:hover {
   transition: transform 0.3s, background 0.3s;
   position: relative;
   cursor: help;
+  word-wrap: break-word;
 }
 
 .grid-item:hover {
@@ -85,6 +87,9 @@ button#exploreBtn:hover {
   font-weight: bold;
   font-size: 1.4rem;
   background: #292955;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
 }
 
 @keyframes fadeIn {
@@ -131,4 +136,39 @@ button#exploreBtn:hover {
   box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
   white-space: normal;
   pointer-events: none;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  button#exploreBtn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 0.9rem;
+  }
+
+  button#exploreBtn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .grid-item {
+    padding: 1rem;
+  }
 }
