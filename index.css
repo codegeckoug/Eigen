@@ -57,6 +57,8 @@ button#exploreBtn:hover {
   display: none;
   background-color: #151529;
   animation: fadeIn 1.5s ease-in-out forwards;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .grid {
@@ -152,6 +154,10 @@ button#exploreBtn:hover {
     padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
   }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -170,5 +176,9 @@ button#exploreBtn:hover {
 
   .grid-item {
     padding: 1rem;
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem;
   }
 }
